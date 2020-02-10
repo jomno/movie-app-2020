@@ -10,4 +10,4 @@
 > 그것도 state가 변동되는 부분만.
 
 > `this.setState({count: this.state.count - 1});` 이 코드는 멍청해. 현재의 상태를 불러오는데 더 적합한 코드는 `this.setState(current => ({count: current.count + 1}));`야
-> 이유는
+> 이유는 성능문제이지
