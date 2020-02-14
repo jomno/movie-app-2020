@@ -20,3 +20,31 @@
 > "async await"
 > `this.setState({movies: movies});` == `his.setState({movies});` 신택스 슈가가 많네..
 > state가 바뀌면 컴포넌트가 다시 실행된다. 그렇다면 컴포넌트에서 state로 분기를 주면 state 대로 화면의 케이스를 줄 수 있다. (트리거가 state)
+
+### 6.1 Building the Router
+
+```js
+import { HashRouter, Route} from "react-route-dom";
+
+return (<HashRouter>
+<Route />
+</HashRouter>);
+```
+HashRouter는 url 사이에 #이 추가된다.
+
+```js
+import { HashRouter, Route } from "react-router-dom";
+import Home from  "./routes/Home";
+import About from "./routes/About";
+import Navigation from "./routes/Navigation";
+import "./App.css";
+
+function App(){
+  return <HashRouter>
+    <Navigation />
+    <Route path="/" exact={true} component={Home}/>
+    <Route path="/about" component={About}/>
+  </HashRouter>
+}
+```
+> `exact={true}`를 추가하면 저 주소이외에 다른 주소를 탐색하지 않음 
